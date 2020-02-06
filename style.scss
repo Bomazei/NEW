@@ -53,39 +53,44 @@ body {
         border-radius: 50%;
         background: radial-gradient(#cc9966,#cc4444);
         position: absolute;
-        box-shadow: 0 0 0 8px #cccc99c9;
+        box-shadow: 0 0 0 10px #cccc99c9;
+        border: 1px solid #cc0033; 
+        &:after,&:before {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid #cc0033; 
+        }
+        &:after {
+            animation: pulse 2s  infinite ease-out 1s; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        &:before {
+            animation: pulse 2s infinite ease-out;
+            top: 10px;
+            right: 10px;
+            left: 10px;
+            bottom: 10px;
+        }
     }
-    .pulse::after,
-    .pulse::before{
-        content: '';
-        position: absolute;
-        border-radius: 50%;
-        border: 1px solid #cc0033;
-        
-    }
-    .pulse::after{
-        animation: pulse .6s  infinite ease;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-    .pulse::before{
-        top: -8px;
-        bottom: -8px;
-        left: -8px;
-        right: -8px;
     
-    }
+    
     
     @keyframes pulse {
         from {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
         to {
-            top: -8px;
-            bottom: -8px;
-            left: -8px;
-            right: -8px;
+            top: -10px;
+            bottom: -10px;
+            left: -10px;
+            right: -10px;
         }
     }
     
@@ -93,6 +98,7 @@ body {
         width: 11px;
         height: 11px;
         margin: 180px 0 0 280px;
+        
     }
     .pulse_2{
         width: 16px;
@@ -159,28 +165,40 @@ body {
         display: flex;
         flex-direction: column;
         
-        text-align-last: left;
-        justify-content: center;
-        
-        .slide-img {
-            width: 100%;
+        .slide-title {
+            font-family: 'Gotham Pro Regular';
+            font-size: 30px;
+            font-weight: normal;
+            color: #fff;
+            padding: 120px 0 0 80px;
         }
+        .slide-img {
+            margin: 0 auto;
+        }
+    }
+    .slide3-ice {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
     }
 }
 .slide3-1 {
-    
-    
-    
+    .slide-img {
+        width: 60%;
+        padding-top: 70px;
+    }
 }
 .slide3-2 {
-    
-    
-    
+    .slide-img {
+        width: 70%;
+        padding-top: 20px;
+    }
 }
 .slide3-3 {
-    
-    
-    
+    .slide-img {
+        width: 80%;
+        padding-top: 10px;
+    }
 }
 .hor-slider {
     display: flex;
@@ -192,7 +210,7 @@ body {
 }
 .range-bar {
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     width: 70%;
     .range-progress {
         width: 100%;
