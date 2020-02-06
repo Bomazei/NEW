@@ -1,0 +1,261 @@
+@font-face {
+    font-family: 'Gotham Pro Regular';
+    src: url('fonts/GothamPro.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Lato Regular';
+    src: url('fonts/Lato-Regular.woff') format('woff');
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gotham Pro Light';
+    src: url('fonts/GothamPro-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    overflow: hidden;
+
+}
+
+
+.slider {
+    width: 1024px;
+}
+.slide {
+    width: 1024px;
+    height: 768px;
+    background-size: cover;
+    position: relative;
+    transition: transform .8s;
+}
+.slide1 {
+    background: url('./images/morecopy.png');
+    background-size: cover;
+    .slide-title {
+        padding: 146px 0 0 75px;
+        font-family:'Gotham Pro Regular';
+        font-weight: normal;
+        font-size: 35pt;
+        color: #003399;
+    }
+    .pulse{
+        border-radius: 50%;
+        background: radial-gradient(#cc9966,#cc4444);
+        position: absolute;
+        box-shadow: 0 0 0 8px #cccc99c9;
+    }
+    .pulse::after,
+    .pulse::before{
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid #cc0033;
+        
+    }
+    .pulse::after{
+        animation: pulse .6s  infinite ease;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .pulse::before{
+        top: -8px;
+        bottom: -8px;
+        left: -8px;
+        right: -8px;
+    
+    }
+    
+    @keyframes pulse {
+        from {
+        }
+        to {
+            top: -8px;
+            bottom: -8px;
+            left: -8px;
+            right: -8px;
+        }
+    }
+    
+    .pulse_1{
+        width: 11px;
+        height: 11px;
+        margin: 180px 0 0 280px;
+    }
+    .pulse_2{
+        width: 16px;
+        height: 16px;
+        margin: 20px 0 0 580px;
+    }
+    .pulse_3{
+        width: 8px;
+        height: 8px;
+        margin: 290px 0 0 480px;
+    }
+    .pulse_4{
+        width: 8px;
+        height: 8px; 
+        margin: 270px 0 0 825px;
+    }
+    .text{
+        font-family: 'Lato Regular';
+        position: absolute;
+        font-size: 14pt ;
+        color: #003399;
+    }
+    .text_1{
+        margin: 145px 0 0 225px;
+    }
+    .text_2{
+        margin: 18px 0 0 610px;
+    }
+    .text_3{
+        margin: 255px 0 0 380px;
+    }
+    .text_4{
+        margin: 235px 0 0 790px;
+    }
+    
+}
+.slide2 {
+    background: url('./images/morecopy2.png');
+    background-size: cover;
+    
+    .slide-title {
+        font-family: 'Gotham Pro Light';
+        font-size: 50px;
+        color: #fff;
+        font-weight: normal;
+        letter-spacing: 2px;
+        width: 60%;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 26%;
+    }
+    .slide2-ice {
+        width: 100%;
+        position: absolute;
+    }
+}
+.slide3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('./images/morecopy3.png');
+    background-size: cover;
+    .slide {
+        display: flex;
+        flex-direction: column;
+        
+        text-align-last: left;
+        justify-content: center;
+        
+        .slide-img {
+            width: 100%;
+        }
+    }
+}
+.slide3-1 {
+    
+    
+    
+}
+.slide3-2 {
+    
+    
+    
+}
+.slide3-3 {
+    
+    
+    
+}
+.hor-slider {
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    .hor-slide {
+        min-width: 1024px;
+    }  
+}
+.range-bar {
+    position: absolute;
+    bottom: 60px;
+    width: 70%;
+    .range-progress {
+        width: 100%;
+        height: 15px;
+        background-color: #e9f9fb;
+        position: absolute;
+        top: 0;
+    }
+    .years {
+        padding: 0 10px;
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        font-family: 'Gotham Pro Regular';
+        font-size: 20px;
+    }
+}
+.input-range {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    background: #e9f9fb;
+    transition: .5s;
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 43px;
+        height: 55px;
+        background: url('./images/PolygonInput.png');
+        background-size: cover;
+        cursor: pointer;
+        transition: .5s; 
+      }
+}
+
+.nav {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    .nav-link {
+        display: block;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: #fff;
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+        
+    }
+    .active {
+        background-color: orange;
+        
+    }
+}
+.scroll-down {
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    transition: opacity .5s;
+}
+
